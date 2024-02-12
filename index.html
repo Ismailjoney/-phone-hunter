@@ -12,48 +12,96 @@
 
 <body>
     <header>
-        <section>
-            <div class="hero min-h-screen bg-base-200">
-                <div class="hero-content flex-col lg:flex-row-reverse">
-                    <div class="text-center lg:text-left">
-                        <h1 class="text-5xl font-bold">Wellcome To Our phone Hat</h1>
-                        <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum et, corporis laboriosam maxime modi doloremque? Corrupti earum aliquid doloremque sed?</p>
-                        <input id="inputValue" type="text" placeholder="search phone" class="input input-bordered input-info w-full mt-4 max-w-xs" />
-                        <button onclick="getInputValue()" class="btn btn-outline btn-accent">Search</button>
-                    </div>
-                    <div class="card shrink-0 w-full max-w-sm  shadow-2xl bg-base-100">
-                        <img src="images/Screenshot_44.png" class="mx-w-sm rounded-lg shadow-2xl" />
-                    </div>
+        <div class="hero min-h-screen">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                    <h1 class="text-3xl font-bold">Wellcome To Our Phone Hat</h1>
+                    <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi
+                        exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <input id="inputValue" type="text" placeholder="search phone"
+                        class="input input-bordered input-info w-full max-w-xs" />
+                    <button onclick="getInputValue()" class="btn btn-outline btn-accent">Search</button>
                 </div>
             </div>
-        </section>
+        </div>
     </header>
 
 
     <!-- main section -->
     <main>
-        <!-- search your phone -->
-        <!-- <section>
-            <div class="flex justify-center gap-4 mt-4 mb-4">
-                <input id="inputValue" type="text" placeholder="search phone" class="input input-bordered input-info w-full max-w-xs" />
-                <button onclick="getInputValue()" class="btn btn-outline btn-accent">Search</button>
+        <!-- spinner -->
+        <section>
+            <div id="loader" class="hidden text-center my-20">
+                <span class="loading loading-spinner text-error"></span>
             </div>
-        </section> -->
+        </section>
+
         <!-- phone display here -->
         <section>
             <div id="displayPhn"
                 class="grid grid-cols-1 justify-items-center items-center md:grid-cols-2 lg:grid-cols-3  gap-4 mt-4">
 
             </div>
-            <div onclick="shaowAllPhones()" id="showAll" class="hidden text-center mt-8">
-                <button class="btn btn-outline btn-accent">Show All</button>
+            <div id="showAll" class="hidden text-center mt-8">
+                <button onclick="shaowAllPhones()" class="btn btn-outline btn-accent">Show All</button>
             </div>
+        </section>
+
+        <!-- total search resualt -->
+        <section>
+            <div class="grid justify-items-center mt-8 mb-4 sm:mx-4 ">
+                <div class="stats shadow">
+
+                    <div class="stat place-items-center  bg-green-900">
+                        <div class="stat-title text-2xl text-slate-200"> Search Resualt</div>
+                        <div class="stat-value">31K</div>
+                        <div class="stat-desc">From January 23 1st to February 10st</div>
+                    </div>
+
+                    <div class="stat place-items-center bg-green-900">
+                        <div class="stat-title text-2xl text-slate-200">Users</div>
+                        <div class="stat-value text-secondary">4,200</div>
+                        <div class="stat-desc text-secondary">↗︎ 40 (2%)</div>
+                    </div>
+
+                    <div class="stat place-items-center  bg-green-900">
+                        <div class="stat-title text-2xl text-slate-200">New Registers</div>
+                        <div class="stat-value">1,200</div>
+                        <div class="stat-desc">↘︎ 90 (14%)</div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- moadal -->
+        <section>
+            <dialog id="phoneDetailsModal" class="modal modal-bottom sm:modal-middle">
+                <div class="modal-box">
+                    <div id="image">
+
+                    </div>
+                    <h3 id="brand" class="font-bold text-lg"> </h3>
+                    <p id="name" class="py-2"> </p>
+                    <h3 id="releaseDate" class="text-lg"> </h3>
+                    <h3 id="mainFecture1" class="text-lg"> </h3>
+                    <h3 id="mainFecture2" class="text-lg"> </h3>
+                    <h3 id="mainFecture3" class="text-lg"> </h3>
+                    <h3 id="others" class="text-lg"> </h3>
+
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
         </section>
     </main>
 
 
     <!-- footer section -->
-    <footer class="footer p-10 bg-base-300 text-base-content mt-8 mb-4">
+    <footer class="footer p-10 justify-items-center  text-base-content mt-8 mb-4">
         <nav>
             <h6 class="footer-title">Services</h6>
             <a class="link link-hover">Branding</a>
@@ -92,6 +140,8 @@
             </div>
         </nav>
     </footer>
+
+
 
 </body>
 <!-- js link -->
