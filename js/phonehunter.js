@@ -46,7 +46,7 @@ const displayPhones = (phones, isShowAll) => {
 
     `
         displayPhn.appendChild(phoneCard)
-        
+        spinner(false)
     });
 }
 //show modal details : handdleShowModal()
